@@ -561,9 +561,30 @@ Priyaju Consultancies is a professional business consulting firm delivering stra
       });
     });
 	  });
-  </script>
+	  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking a link (good mobile UX)
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    } else {
+      console.warn('Mobile menu elements not found');
+    }
+  });
+</script>
 </body>
 </html>
+
 
 
 
