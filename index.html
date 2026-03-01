@@ -1,373 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO Meta Tags -->
-<meta name="description" content="Priyaju Consultancies offers expert business strategy, Job Opportunities, and Employee Assesment services to help businesses grow successfully.">
-<meta name="keywords" content="Priyaju Consultancies, Business Consulting, Strategy, Operations, Growth Consulting">
-<meta name="author" content="Priyaju Consultancies">
-
-<title>Priyaju Consultancies | Business Consulting Experts</title>
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-body {
-  font-family:'Poppins', sans-serif;
-  background: linear-gradient(to right, #005f6a, #00b894);
-  color:#fff;
-}
-
-/* NAVIGATION */
-nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  background:rgba(0,0,0,0.3);
-  backdrop-filter:blur(10px);
-  position:fixed;
-  width:100%;
-  z-index:1000;
-}
-
-nav h2 {color:#fff;}
-
-nav ul {
-  list-style:none;
-  display:flex;
-  gap:20px;
-}
-
-nav ul li a {
-  color:#fff;
-  text-decoration:none;
-  font-weight:500;
-  transition:0.3s;
-}
-
-nav ul li a:hover {
-  color:#ffd1dc;
-}
-
-/* HEADER */
-header {
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
-
-header h1 {
-  font-size:48px;
-  margin-bottom:20px;
-}
-
-header p {
-  font-size:20px;
-}
-
-/* SECTIONS */
-section {
-  padding:120px 50px;
-  background:#fff;
-  color:#1e293b;
-}
-
-section:nth-child(even) {
-  background:#f9fafb;
-}
-
-h2 {
-  text-align:center;
-  margin-bottom:40px;
-  color:#1e3a8a;
-}
-
-/* TEAM */
-.team-container {
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.team-card {
-  width:250px;
-  text-align:center;
-  background:#fff;
-  border-radius:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.1);
-  overflow:hidden;
-  transition:0.3s;
-}
-
-.team-card img {
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
-
-.team-card h3 {
-  margin-top:15px;
-  color:#ec4899;
-}
-
-.team-card p {
-  margin-bottom:20px;
-}
-
-.team-card:hover {
-  transform:translateY(-10px);
-}
-
-/* SERVICES */
-.services-list {
-  max-width:900px;
-  margin:auto;
-  columns:2;
-}
-
-.services-list ul {
-  list-style:disc;
-  padding-left:20px;
-}
-
-/* CONTACT */
-.contact-info {
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.contact-info a {
-  color:#ec4899;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.social-icons {
-  text-align:center;
-  margin-top:20px;
-}
-
-.social-icons a {
-  font-size:24px;
-  margin:0 15px;
-  color:#1e3a8a;
-  transition:0.3s;
-}
-
-.social-icons a:hover {
-  color:#ec4899;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25D366;
-  color:#fff;
-  font-size:28px;
-  padding:15px;
-  border-radius:50%;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-footer {
-  text-align:center;
-  padding:30px;
-    background: linear-gradient(to right, #005f6a, #00b894);
-  color:#fff;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  nav {flex-direction:column;gap:10px;}
-  header h1 {font-size:32px;}
-  .services-list {columns:1;}
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyaju Consultancies | Web Development • Digital Marketing • Employment Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    :root {
+      --primary: #7c3aed;   /* EDIT primary colour */
+      --accent: #ec4899;    /* EDIT accent colour */
+      --secondary: #22d3ee; /* EDIT highlight colour */
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-bg { background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary)); }
+    .service-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .service-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgb(124 58 237 / 0.25); }
+    .nav-link { position: relative; }
+    .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(to right, var(--primary), var(--accent)); transition: width 0.3s ease; }
+    .nav-link:hover:after { width: 100%; }
+  </style>
 </head>
+<body class="bg-zinc-50 text-zinc-900">
 
-<body>
+  <!-- ==================== EASY EDIT CONFIG ==================== -->
+  <!-- Change these values only - everything else auto-updates -->
+  <script>
+    const config = {
+      primary: '#7c3aed',
+      accent: '#ec4899',
+      secondary: '#22d3ee',
+      logoText: 'Priyaju',
+      logoSub: 'Consultancies',
+      phone: '+91 98765 43210',
+      whatsapp: '+91 98765 43210',
+      email: 'hello@priyaju.in'
+    };
+  </script>
+  <!-- ==================== END CONFIG ==================== -->
 
-<nav>
-  <div style="display:flex; align-items:center; gap:10px;">
-  <img src="logo.png" alt="Priyaju Consultancies Logo" style="height:45px;">
-  <h2 style="margin:0; font-size:20px; color:white;">Priyaju Consultancies</h2>
-</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#vision">Vision</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header>
-  <div>
-    <h1>Empowering People & Business for Sustainable Growth</h1>
-    <p>Strategy | Employment | Innovation | Excellence</p>
+  <!-- NAVBAR -->
+  <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+     
+<!-- LOGO: logo + Priyaju -->
+<a href="index.html" class="flex items-center gap-3 md:gap-4">
+  <!-- Your logo image -->
+  <img 
+    src="logo.png  " Priyaju Consultancies" 
+    alt="Priyaju Consultancies Logo" 
+    class="h-12 md:h-15 w-auto object-contain"
+  >
+<div class="hidden md:flex flex-col leading-tight">
+    <span class="font-bold text-2xl md:text-3xl tracking-tight text-violet-700">Priyaju</span>
+    <span class="text-base md:text-xl font-medium text-pink-600">Consultancies</span>
   </div>
-</header>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p style="max-width:800px;margin:auto;text-align:center;">
-    Priyaju Consultancies is a professional business consulting firm delivering strategic guidance,
-    financial advisory, and operational excellence solutions to organizations seeking long-term growth. Our Moto is to Make India Golden Bird Again (MIGBA).
-  </p>
-</section>
-
-<section id="vision">
-  <h2>Our Vision</h2>
-  <p style="max-width:800px;margin:auto;text-align:center;">
-    Priyaju Consultancies is a local recruitment company offering manpower consultancy, Hire-train-deploy staffing, offshore hiring, headhunting,and executive recruitment services in PAN India, with local recruiters, geo-specific and industry-specific talent and data driven hiring processes, we optimize recruitment benefits and reduce costs, 
-    Our dream is to Make India Golden Bird Again (MIGBA).
-  </p>
-</section>
-
-<section id="team">
-  <h2>Our Team</h2>
-  <div style="max-width:800px; margin:20px auto 40px auto; text-align:center; font-style:italic; color:#555;">
-  <p>
-    "We are a group of enthusiastic and skilled people who wish to serve our country and people of course. We wish to create a transparency between companies and employees where both can work together to reach their goals. Our goal is to "Make India Golden Bird Again" (MIGBA)."
-  </p>
-  <p style="margin-top:10px; font-weight:600; color:#ec4899;">
-    – Abhishek, Founder & CEO
-  </p>
-</div>
-  <div class="team-container">
-
-    <div class="team-card">
-      <img src="images/abhishek.jpg" alt="Team Member">
-      <h3>Abhi Thakur</h3>
-      <p>Founder</p>
-    </div>
-
-    <div class="team-card">
-      <img src="images/member2.jpg" alt="Team Member">
-      <h3>Priya Thakur</h3>
-      <p>Co-Founder</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services-list">
-    <ul>
-      <li>Website Design</li>
-      <li>Website Development</li>
-      <li>Virtual Staffing</li>
-      <li>Digital Marketing</li>
-      <li>Market Research & Analysis</li>
-      <li>SEO & SMO</li>
-      <li>Application Development</li>
-      <li>Digital Media Jobs</li>
-      <li>Customer Service</li>
-      <li>Front Office</li>
-      <li>Event Management</li>
-      <li>Call Center jobs</li>
-      <li>Medical Industry</li>
-      <li>Packaging Industry</li>
-      <li>Computer Operators</li>
-      <li>Property Executives</li>
-      <li>Import Export Industry</li>
-      <li>Beauty Salon Staff</li>
-      <li>Hotel Industry</li>
-    </ul>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-
-  <div class="contact-info">
-    📧 Email: 
-    <a href="mailto:priyajuconsultancies@gmail.com">
-  priyajuconsultancies@gmail.com
 </a>
-  </div>
-<div style="text-align:center; margin-top:20px;">
-  <h3 style="color:#1e3a8a; margin-bottom:10px;">We Operate Across:</h3>
-  <ul style="list-style:disc; display:inline-block; text-align:left; font-weight:500;">
-    <li>Saharanpur</li>
-    <li>Muzaffarnagar</li>
-    <li>Meerut</li>
-    <li>Ghaziabad</li>
-    <li>Noida</li>
-    <li>Greater Noida</li>
-    <li>Ballia</li>
-  </ul>
-</div>
   
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/abhishek-singh-abhilion001/"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.facebook.com/priyajuconsultancies"><i class="fab fa-https://fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/priyaju_consultancies/"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/abhilion001"><i class="fab fa-twitter"></i></a>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <div class="group relative">
+          <button class="flex items-center gap-1 nav-link">Services <i class="fas fa-chevron-down text-xs"></i></button>
+          <div class="absolute hidden group-hover:block pt-4 w-64">
+            <div class="bg-white shadow-2xl rounded-3xl py-5 px-6 border">
+              <a href="#webdev" class="block py-2.5 hover:text-violet-600 font-medium">Website Development</a>
+              <a href="#marketing" class="block py-2.5 hover:text-violet-600 font-medium">Online Marketing</a>
+              <a href="#employment" class="block py-2.5 hover:text-violet-600 font-medium">Employment Services</a>
+            </div>
+          </div>
+        </div>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden md:block bg-[var(--primary)] text-white px-8 py-3.5 rounded-3xl font-semibold hover:bg-violet-700 transition">Free Quote</a>
+
+      <!-- Mobile button -->
+      <button id="mobile-btn" class="md:hidden text-3xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-8">
+      <div class="px-8 flex flex-col gap-6 text-lg">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#webdev" class="mobile-link">Website Development</a>
+        <a href="#marketing" class="mobile-link">Online Marketing</a>
+        <a href="#employment" class="mobile-link">Employment Services</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero-bg h-screen text-white flex items-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center z-10">
+      <h1 class="text-5xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+        Grow Faster.<br>Look Better.<br>Hire Smarter.
+      </h1>
+      <p class="text-2xl md:text-3xl max-w-2xl mx-auto opacity-90 mb-12">
+        Expert Website Development • Online Marketing • Employment Services
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-white text-[var(--primary)] px-10 py-4 rounded-3xl font-semibold text-xl hover:scale-105 transition">Get Free Consultation</a>
+        <a href="#projects" class="border-2 border-white px-10 py-4 rounded-3xl font-semibold text-xl hover:bg-white/10 transition">View Projects</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 flex flex-col items-center text-sm opacity-75">
+      <div>Trusted by 200+ Indian businesses</div>
+      <i class="fas fa-chevron-down animate-bounce mt-3 text-2xl"></i>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-5xl font-bold mb-6">Your One-Stop Growth Partner</h2>
+        <p class="text-xl text-zinc-600 leading-relaxed">
+          Priyaju Consultancies delivers stunning websites, powerful digital marketing campaigns, and top talent — all under one roof. Based in India, serving businesses nationwide.
+
+	
+Priyaju Consultancies is a professional business consulting firm delivering strategic guidance, financial advisory, and operational excellence solutions to organizations seeking long-term growth. *Our Moto is to Make India Golden Bird Again (MIGBA)*.
+
+
+        </p>
+      </div>
+      <div class="grid grid-cols-3 gap-6 text-center">
+        <div class="bg-zinc-100 rounded-3xl p-6"><div class="text-4xl font-bold text-violet-600">150+</div><div class="text-sm mt-2">Projects Delivered</div></div>
+        <div class="bg-zinc-100 rounded-3xl p-6"><div class="text-4xl font-bold text-pink-600">200+</div><div class="text-sm mt-2">Happy Clients</div></div>
+        <div class="bg-zinc-100 rounded-3xl p-6"><div class="text-4xl font-bold text-cyan-600">98%</div><div class="text-sm mt-2">Retention</div></div>
+      </div>
+    </div>
+  </section>
+
+<!-- Team Members Section -->
+<section class="py-16 md:py-20 bg-zinc-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Meet Our Team</h2>
+    <p class="text-lg md:text-xl text-center text-zinc-600 mb-16 max-w-3xl mx-auto">
+      Passionate experts dedicated to helping your business grow through technology, marketing, and talent.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
+      
+      <!-- Team Member 1 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="team-abhishek.jpg"
+            alt="Abhishek - Founder " 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          >
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-zinc-900">Abhishek</h3>
+          <p class="text-violet-600 font-medium mt-1">Founder </p>
+          <p class="text-sm text-zinc-600 mt-3">
+            15+ years in digital transformation & recruitment. Visionary leader driving Priyaju's growth.
+          </p>
+          <div class="mt-4 flex justify-center gap-4 text-zinc-500">
+            <a href="#" class="hover:text-violet-600"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="#" class="hover:text-violet-600"><i class="fab fa-twitter text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="team-priyanka.jpg"
+            alt="Priyanka - Co Founder" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          >
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-zinc-900">Priyanka</h3>
+          <p class="text-violet-600 font-medium mt-1">Co Founder</p>
+          <p class="text-sm text-zinc-600 mt-3">
+            SEO & paid ads specialist. Helped 80+ clients achieve top Google rankings.
+          </p>
+          <div class="mt-4 flex justify-center gap-4 text-zinc-500">
+            <a href="#" class="hover:text-violet-600"><i class="fab fa-linkedin text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="team-abhi.jpg" 
+            alt="Abhi Thakur - VP Business" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          >
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-zinc-900">Abhi Thakur</h3>
+          <p class="text-violet-600 font-medium mt-1">VP Business</p>
+          <p class="text-sm text-zinc-600 mt-3">
+            10+ years of experience in business and market research & development.
+          </p>
+          <div class="mt-4 flex justify-center gap-4 text-zinc-500">
+            <a href="#" class="hover:text-violet-600"><i class="fab fa-github text-xl"></i></a>
+            <a href="#" class="hover:text-violet-600"><i class="fab fa-linkedin text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more team members here as needed (copy-paste the div above) -->
+
+    </div>
   </div>
 </section>
 
-<footer>
-  © 2026 Priyaju Consultancies | All Rights Reserved
-</footer>
+  <!-- SERVICES -->
+  <section class="py-24 bg-zinc-100" id="services">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold mb-3">Our Services</h2>
+        <p class="text-xl text-zinc-600">Everything you need to grow online and offline</p>
+      </div>
 
-<a href="https://wa.me/919654942294" class="whatsapp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+      <!-- Website Development -->
+      <div id="webdev" class="mb-20">
+        <div class="flex items-center gap-4 mb-10">
+          <span class="text-5xl">🌐</span>
+          <h3 class="text-4xl font-semibold">Website Development</h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-laptop-code text-5xl text-violet-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Custom Websites & Apps</h4>
+            <p class="text-zinc-600">Beautiful, fast, conversion-focused websites built exactly to your needs.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-shopping-cart text-5xl text-pink-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">E-Commerce Stores</h4>
+            <p class="text-zinc-600">Powerful online shops on Shopify, WooCommerce or custom.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fab fa-wordpress text-5xl text-cyan-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">WordPress & CMS</h4>
+            <p class="text-zinc-600">Easy-to-manage professional sites with any CMS.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-mobile-alt text-5xl text-violet-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Mobile Responsive & PWA</h4>
+            <p class="text-zinc-600">Works perfectly on phones, tablets & desktops.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-search text-5xl text-pink-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">SEO & Speed Optimization</h4>
+            <p class="text-zinc-600">Rank higher on Google and load lightning fast.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-tools text-5xl text-cyan-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Maintenance & Support</h4>
+            <p class="text-zinc-600">Ongoing updates, security & 24×7 support.</p>
+          </div>
+        </div>
+      </div>
 
+      <!-- Online Marketing -->
+      <div id="marketing" class="mb-20">
+        <div class="flex items-center gap-4 mb-10">
+          <span class="text-5xl">📣</span>
+          <h3 class="text-4xl font-semibold">Online Marketing</h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-search-dollar text-5xl text-violet-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">SEO & Google Ranking</h4>
+            <p class="text-zinc-600">Get found on the first page of Google.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-ad text-5xl text-pink-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Google Ads & PPC</h4>
+            <p class="text-zinc-600">Targeted paid campaigns that deliver ROI.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-share-alt text-5xl text-cyan-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Social Media Marketing</h4>
+            <p class="text-zinc-600">Instagram, Facebook, LinkedIn & more.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-pen-nib text-5xl text-violet-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Content & Video Marketing</h4>
+            <p class="text-zinc-600">Engaging content that converts viewers to customers.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-envelope text-5xl text-pink-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Email & WhatsApp Marketing</h4>
+            <p class="text-zinc-600">Automated campaigns that bring repeat business.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-chart-line text-5xl text-cyan-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Analytics & Reports</h4>
+            <p class="text-zinc-600">Monthly performance dashboards & insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employment Services -->
+      <div id="employment">
+        <div class="flex items-center gap-4 mb-10">
+          <span class="text-5xl">👔</span>
+          <h3 class="text-4xl font-semibold">Employment Services</h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-users text-5xl text-violet-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">IT & Tech Recruitment</h4>
+            <p class="text-zinc-600">Finding the best developers & tech talent.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-user-tie text-5xl text-pink-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Executive Search</h4>
+            <p class="text-zinc-600">Headhunting senior leaders & managers.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-briefcase text-5xl text-cyan-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Bulk & Contract Staffing</h4>
+            <p class="text-zinc-600">Fast workforce solutions for any scale.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-comment-dots text-5xl text-violet-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Career Counseling</h4>
+            <p class="text-zinc-600">Resume building & interview preparation.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-chalkboard-teacher text-5xl text-pink-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Skill Assessment & Training</h4>
+            <p class="text-zinc-600">Technical tests and upskilling programs.</p>
+          </div>
+          <div class="service-card bg-white rounded-3xl p-8 border">
+            <i class="fas fa-hand-holding-dollar text-5xl text-cyan-500 mb-6"></i>
+            <h4 class="font-semibold text-xl mb-2">Payroll & HR Outsourcing</h4>
+            <p class="text-zinc-600">Complete HR & compliance support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Our Recent Work</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group bg-white border rounded-3xl overflow-hidden hover:border-violet-300 transition">
+          <img src="https://picsum.photos/id/201/600/400" alt="Project" class="w-full h-56 object-cover group-hover:scale-105 transition">
+          <div class="p-6">
+            <h4 class="font-semibold text-xl">Fashion E-commerce Store</h4>
+            <p class="text-zinc-500">Website Development + Digital Marketing</p>
+          </div>
+        </div>
+        <div class="group bg-white border rounded-3xl overflow-hidden hover:border-violet-300 transition">
+          <img src="https://picsum.photos/id/870/600/400" alt="Project" class="w-full h-56 object-cover group-hover:scale-105 transition">
+          <div class="p-6">
+            <h4 class="font-semibold text-xl">Real Estate Corporate Site</h4>
+            <p class="text-zinc-500">Full Website + SEO Campaign</p>
+          </div>
+        </div>
+        <div class="group bg-white border rounded-3xl overflow-hidden hover:border-violet-300 transition">
+          <img src="https://picsum.photos/id/1015/600/400" alt="Project" class="w-full h-56 object-cover group-hover:scale-105 transition">
+          <div class="p-6">
+            <h4 class="font-semibold text-xl">200+ IT Placements</h4>
+            <p class="text-zinc-500">Employment Services Success</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 bg-gradient-to-br from-violet-50 to-pink-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">What Our Clients Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <div class="flex gap-1 text-yellow-400 mb-6">★★★★★</div>
+          <p class="text-lg italic">"Priyaju built our website in just 12 days and our online sales tripled in the first month!"</p>
+          <div class="mt-8 flex items-center gap-3">
+            <img src="https://picsum.photos/id/64/64" class="w-12 h-12 rounded-full">
+            <div>
+              <div class="font-semibold">Ramesh Sharma</div>
+              <div class="text-sm text-zinc-500">Founder, TrendyWear</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <div class="flex gap-1 text-yellow-400 mb-6">★★★★★</div>
+          <p class="text-lg italic">"Their marketing team got us 400+ qualified leads in 30 days. Best decision we made!"</p>
+          <div class="mt-8 flex items-center gap-3">
+            <img src="https://picsum.photos/id/201/64" class="w-12 h-12 rounded-full">
+            <div>
+              <div class="font-semibold">Priya Mehra</div>
+              <div class="text-sm text-zinc-500">CEO, EduSkill Academy</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <div class="flex gap-1 text-yellow-400 mb-6">★★★★★</div>
+          <p class="text-lg italic">"They placed 18 developers for us in 3 weeks — all still working with us after 1 year."</p>
+          <div class="mt-8 flex items-center gap-3">
+            <img src="https://picsum.photos/id/237/64" class="w-12 h-12 rounded-full">
+            <div>
+              <div class="font-semibold">Amit Patel</div>
+              <div class="text-sm text-zinc-500">HR Head, TechNova Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-zinc-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="text-5xl font-bold mb-8">Ready to Grow Your Business?</h2>
+        <div class="space-y-8 text-lg">
+          <a href="tel:${config.phone}" class="flex items-center gap-5 hover:text-[var(--secondary)] transition">
+            <i class="fas fa-phone text-4xl"></i>
+            <div>
+              <div class="font-medium">Call Us</div>
+              <div class="text-3xl">91 9654 942294</div>
+            </div>
+          </a>
+          <a href="https://wa.me/919654942294" target="_blank" class="flex items-center gap-5 hover:text-[var(--secondary)] transition">
+            <i class="fab fa-whatsapp text-4xl"></i>
+            <div>
+              <div class="font-medium">Chat on WhatsApp</div>
+              <div class="text-3xl">9654 942294</div>
+            </div>
+          </a>
+          <div class="flex items-center gap-5">
+            <i class="fas fa-envelope text-4xl"></i>
+            <div>
+              <div class="font-medium">Email Us</div>
+              <div class="text-2xl">info@priyajuconsultancies.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="contact-form" class="bg-white/10 backdrop-blur-xl rounded-3xl p-10">
+        <input type="text" placeholder="Your Name" class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 mb-6 focus:outline-none" required>
+        <input type="email" placeholder="Business Email" class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 mb-6 focus:outline-none" required>
+        <textarea placeholder="Tell us about your project..." rows="5" class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 mb-8 focus:outline-none" required></textarea>
+        <button type="submit" class="w-full bg-white text-zinc-900 font-semibold py-5 rounded-3xl hover:bg-[var(--accent)] hover:text-white transition">Send Message – We'll reply in 1 hour</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919654942294" target="_blank"
+     class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:scale-110 transition z-50">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-12 text-center text-sm">
+    © 2026 Priyaju Consultancies • Delhi, India • All Rights Reserved
+  </footer>
+
+  <script>
+    // Tailwind config
+    tailwind.config = { content: [], theme: { extend: { colors: { primary: 'var(--primary)', accent: 'var(--accent)' } } } };
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Form success
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('✅ Thank you! Our team will contact you within 1 hour on WhatsApp or phone.');
+      this.reset();
+    });
+  </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
